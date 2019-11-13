@@ -1,0 +1,27 @@
+<p>pic-game works!</p>
+<img src="../../assets/images/rose.jpg">
+<button (click)="messageif = !messageif">If on/off</button>
+<p *ngIf = "messageif">True</p>
+<p *ngIf = "!messageif">False</p>
+<button (click)="stclick()">Click me!</button>
+{{gamepic}}
+<div class="">
+    <div *ngFor = "let game of games" class="item">
+        <h3 [style.color]="messageif ? 'red' : 'blue'">{{game.id}}</h3>
+        <h4>{{game.name}}</h4>
+    </div>
+
+</div>
+
+
+
+<button (click)="changeTab(1)" class="btn" [class.active]="tabNumber==1">tab 1</button>
+<button (click)="changeTab(2)" class="btn" [class.active]="tabNumber==2">tab 2</button>
+<button (click)="changeTab(3)" class="btn" [class.active]="tabNumber==3">tab 3</button>
+<div [ngSwitch]="tabNumber">
+    <div *ngSwitchCase="1">tab 1 content</div>
+    <div *ngSwitchCase="2">tab 2 content</div>
+    <div *ngSwitchCase="3">tab 3 content</div>
+    
+</div>
+
